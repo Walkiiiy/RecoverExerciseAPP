@@ -89,7 +89,6 @@ export default function ExerciseScreen() {
         // Start recording video
         if (cameraRef.current) {
           const recording = await cameraRef.current.recordAsync({
-            quality: '720p',
             maxDuration: exercise.duration,
           });
           
@@ -207,6 +206,7 @@ export default function ExerciseScreen() {
               ref={cameraRef}
               style={styles.camera}
               facing="front"
+              videoQuality="720p"
             >
               <View style={styles.cameraOverlay}>
                 <View style={styles.recordingIndicator}>
